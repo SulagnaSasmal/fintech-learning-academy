@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Definition, Types & Core Concepts — FinTech Learning Academy</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FinTech<span>·</span>Academy</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Courses</a>
+      <a href="course-payments.html" class="nav-link active">Payments</a>
+    </div>
+    <div class="nav-actions">
+      <a href="quiz.html" class="btn btn-primary btn-sm">Take Quiz →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="lesson-layout">
+
+  <!-- ARTICLE -->
+  <article class="lesson-article">
+    <div class="breadcrumb">
+      <a href="index.html">Academy</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="course-payments.html">Payments Fundamentals</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Module 1</span>
+      <span class="breadcrumb-sep">›</span>
+      <span>Lesson 1.1</span>
+    </div>
+
+    <div style="display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap;">
+      <span class="badge badge-amber">BEGINNER</span>
+      <span class="badge badge-gray">15 min read</span>
+      <span class="badge badge-gray">Module 1 · Lesson 1</span>
+    </div>
+
+    <h1 style="font-family:var(--font-display);font-size:1.85rem;font-weight:800;color:var(--text);letter-spacing:-0.025em;line-height:1.15;margin-bottom:1rem;">Payment Definition, Types &amp; Core Concepts</h1>
+    <p style="font-size:1rem;color:var(--text-3);margin-bottom:2rem;font-style:italic;">Learn what a payment is, how payment types differ, and why these distinctions matter for system design and compliance.</p>
+
+    <h2>What Is a Payment?</h2>
+    <p>At its most fundamental level, a <strong>payment</strong> is the transfer of value from one party to another in satisfaction of an obligation. While this definition sounds straightforward, the mechanics underpinning modern payments involve dozens of institutions, multiple technology layers, and complex legal frameworks operating across milliseconds or multi-day settlement windows.</p>
+
+    <p>In the context of financial services, payments are classified along several axes — direction of flow, timing of settlement, reversibility, and the rail (network) over which they travel. Understanding these axes is essential whether you're designing a payment product, writing API documentation, or building compliance controls.</p>
+
+    <h2>Push vs. Pull Payments</h2>
+    <p>The most fundamental distinction in payments is between <strong>push</strong> and <strong>pull</strong> transactions:</p>
+
+    <ul>
+      <li><strong>Push payments</strong> are initiated by the sender. The payer instructs their bank or payment service provider to move funds to a recipient. Wire transfers, ACH credits, and RTP transfers are push payments. The payer retains control — they decide when and how much to send.</li>
+      <li><strong>Pull payments</strong> are initiated by the recipient. The payee uses a prior authorization to debit the payer's account. Direct debits, card payments, and ACH debits are pull payments. The payee pulls funds from the payer's account on agreed terms.</li>
+    </ul>
+
+    <p>This distinction has profound implications for disputes and reversibility. Pull payments can generally be reversed (chargebacks, return items). Push payments, particularly wire transfers, are typically final once the receiving bank credits the beneficiary account.</p>
+
+    <div class="callout callout-note">
+      <div class="callout-title">Note — Real-Time Push Payments</div>
+      <p>Real-Time Payments (RTP) via The Clearing House and FedNow are push-only networks by design. This means the payer explicitly initiates every transfer. There is <em>no</em> pull capability — a feature that reduces fraud surface but limits use cases like subscription billing.</p>
+    </div>
+
+    <h2>Payment Types by Rail</h2>
+    <p>Payment "rails" refer to the infrastructure and rules networks over which value travels. Each rail has different characteristics for speed, reversibility, cost, and coverage:</p>
+
+    <div style="overflow-x:auto;margin:1.5rem 0;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.85rem;">
+        <thead>
+          <tr style="background:var(--bg-tag);border-bottom:2px solid var(--border);">
+            <th style="padding:10px 12px;text-align:left;font-weight:700;color:var(--text);">Rail</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700;color:var(--text);">Settlement</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700;color:var(--text);">Reversible</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700;color:var(--text);">Typical Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-family:var(--font-mono);color:var(--amber);">ACH</td>
+            <td style="padding:10px 12px;color:var(--text-2);">T+1 (batch)</td>
+            <td style="padding:10px 12px;color:var(--teal);">Yes (60 days)</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Payroll, bill pay, subscriptions</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-family:var(--font-mono);color:var(--indigo);">Card (Visa/MC)</td>
+            <td style="padding:10px 12px;color:var(--text-2);">T+1–T+2</td>
+            <td style="padding:10px 12px;color:var(--teal);">Yes (chargeback)</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Retail POS, e-commerce</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-family:var(--font-mono);color:var(--purple);">Wire (Fedwire)</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Same-day</td>
+            <td style="padding:10px 12px;color:var(--red);">No (final)</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Large-value interbank, real estate</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:10px 12px;font-family:var(--font-mono);color:var(--teal);">RTP / FedNow</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Seconds (24/7)</td>
+            <td style="padding:10px 12px;color:var(--red);">No (near-final)</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Gig pay, insurance claims, B2C</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;font-family:var(--font-mono);">SWIFT</td>
+            <td style="padding:10px 12px;color:var(--text-2);">T+1–T+5</td>
+            <td style="padding:10px 12px;color:var(--red);">Difficult</td>
+            <td style="padding:10px 12px;color:var(--text-2);">Cross-border, trade finance</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Key Participants in a Payment Transaction</h2>
+    <p>A single card payment at a coffee shop involves at least five distinct entities, each with a defined role and contractual relationship:</p>
+
+    <ul>
+      <li><strong>Cardholder (Payer)</strong> — The customer whose card is being charged. Holds a relationship with the issuing bank.</li>
+      <li><strong>Merchant (Payee)</strong> — Accepts the payment. Has a merchant account and processing agreement with an acquirer.</li>
+      <li><strong>Issuing Bank (Issuer)</strong> — The bank that issued the customer's card. Authorizes or declines transactions and holds the liability for credit issuance.</li>
+      <li><strong>Acquiring Bank (Acquirer)</strong> — The merchant's bank. Receives the transaction request from the merchant and routes it to the card network for authorization.</li>
+      <li><strong>Card Network</strong> — Visa, Mastercard, American Express. Operates the rails, sets interchange rules, and routes authorization messages between issuer and acquirer.</li>
+    </ul>
+
+    <p>When a payment service provider (PSP) like Stripe or Adyen is involved, it typically performs the acquirer function or aggregates processing on behalf of multiple acquirers, adding a technology layer between the merchant and the underlying financial infrastructure.</p>
+
+    <div class="callout callout-tip">
+      <div class="callout-title">Tip — Understanding the Four-Party Model</div>
+      <p>Visa and Mastercard operate on a "four-party model": cardholder, merchant, issuer, and acquirer. Amex traditionally operates on a "three-party model" (they issue the card <em>and</em> act as acquirer), though this is evolving. The model determines who bears interchange fees and chargebacks.</p>
+    </div>
+
+    <h2>Payment Timing: When Do Funds Actually Move?</h2>
+    <p>There is often confusion between <strong>authorization</strong>, <strong>clearing</strong>, and <strong>settlement</strong> — three distinct events that collectively complete a payment:</p>
+
+    <ul>
+      <li><strong>Authorization</strong> (T+0): The issuer confirms the cardholder has sufficient funds/credit and places a hold. Funds do not move yet. This happens in sub-2 seconds for card transactions.</li>
+      <li><strong>Clearing</strong> (T+0 to T+1): Transaction data is exchanged between acquirer and issuer for settlement calculation. Batch clearing typically occurs overnight via the card network.</li>
+      <li><strong>Settlement</strong> (T+1 to T+2): Actual fund movement. The network debits the issuer and credits the acquirer. The acquirer credits the merchant (minus interchange and processing fees).</li>
+    </ul>
+
+    <p>This time lag is economically significant. A merchant's bank account is typically credited 1–2 business days after the transaction, even though the customer's account was debited at the point of authorization. Instant settlement products (RTP, Visa Direct, Mastercard Send) are closing this gap for specific use cases.</p>
+
+    <div class="code-block">
+<span class="cmt">// Simplified payment object — showing relationship between authorization and settlement</span>
+{
+  <span class="key">"transaction_id"</span>: <span class="str">"txn_1a2b3c4d5e"</span>,
+  <span class="key">"status"</span>: <span class="str">"settled"</span>,
+  <span class="key">"amount"</span>: <span class="num">4250</span>,          <span class="cmt">// in cents: $42.50</span>
+  <span class="key">"currency"</span>: <span class="str">"USD"</span>,
+  <span class="key">"type"</span>: <span class="str">"card_pull"</span>,     <span class="cmt">// card debit = pull</span>
+  <span class="key">"rail"</span>: <span class="str">"visa"</span>,
+  <span class="key">"authorized_at"</span>: <span class="str">"2025-02-10T14:32:00Z"</span>,  <span class="cmt">// T+0</span>
+  <span class="key">"cleared_at"</span>: <span class="str">"2025-02-10T23:59:00Z"</span>,    <span class="cmt">// T+0 (next batch)</span>
+  <span class="key">"settled_at"</span>: <span class="str">"2025-02-11T09:00:00Z"</span>,    <span class="cmt">// T+1</span>
+  <span class="key">"merchant_credited"</span>: <span class="num">4073</span>   <span class="cmt">// net of 4.17% interchange</span>
+}</div>
+
+    <div class="takeaways">
+      <div class="takeaways-title">Key Takeaways — Lesson 1.1</div>
+      <ul>
+        <li>A payment is the transfer of value in satisfaction of an obligation — direction, timing, and rail determine its type</li>
+        <li>Push payments are sender-initiated (ACH credits, wires, RTP); pull payments are receiver-initiated (card debits, ACH debits)</li>
+        <li>Authorization, clearing, and settlement are distinct events separated by hours or days</li>
+        <li>The four-party model involves cardholder, issuer, acquirer, and card network — each with distinct roles and fee arrangements</li>
+        <li>Rail selection drives settlement speed, reversibility, and compliance requirements</li>
+      </ul>
+    </div>
+
+    <div style="background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--radius);padding:1.25rem;text-align:center;margin:2rem 0;">
+      <div style="font-family:var(--font-display);font-weight:700;color:var(--text);margin-bottom:0.5rem;">Test Your Knowledge</div>
+      <p style="font-size:0.875rem;color:var(--text-2);margin-bottom:1rem;">Ready to check your understanding of payment fundamentals?</p>
+      <a href="quiz.html" class="btn btn-primary">Take the Module 1 Quiz →</a>
+    </div>
+
+    <div class="lesson-nav">
+      <a href="course-payments.html">← Course Overview</a>
+      <a href="#">Lesson 1.2: Participants &amp; Roles →</a>
+    </div>
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="lesson-sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">In This Lesson</div>
+      <nav class="sidebar-toc">
+        <a href="#what-is-payment">What Is a Payment?</a>
+        <a href="#push-pull">Push vs. Pull Payments</a>
+        <a href="#rails">Payment Types by Rail</a>
+        <a href="#participants">Key Participants</a>
+        <a href="#timing">Authorization vs. Settlement</a>
+      </nav>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Course Progress</div>
+      <div class="progress-bar-wrap" data-course="payments" data-total="12">
+        <div class="progress-label">
+          <span>Payments Fundamentals</span>
+          <span class="progress-pct">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Key Terms</div>
+      <div style="font-size:0.8rem;color:var(--text-2);">
+        <div style="margin-bottom:0.5rem;"><strong style="color:var(--amber);font-family:var(--font-mono);">ACH</strong> — Automated Clearing House</div>
+        <div style="margin-bottom:0.5rem;"><strong style="color:var(--amber);font-family:var(--font-mono);">PSP</strong> — Payment Service Provider</div>
+        <div style="margin-bottom:0.5rem;"><strong style="color:var(--amber);font-family:var(--font-mono);">Acquirer</strong> — Merchant's bank</div>
+        <div style="margin-bottom:0.5rem;"><strong style="color:var(--amber);font-family:var(--font-mono);">Issuer</strong> — Cardholder's bank</div>
+        <div style="margin-bottom:0.5rem;"><strong style="color:var(--amber);font-family:var(--font-mono);">T+1</strong> — Settlement the next business day</div>
+        <div><strong style="color:var(--amber);font-family:var(--font-mono);">RTP</strong> — Real-Time Payments (The Clearing House)</div>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Next Up</div>
+      <a href="#" style="display:block;font-size:0.82rem;color:var(--text-2);text-decoration:none;padding:0.5rem 0;border-bottom:1px solid var(--border);">Lesson 1.2 — Participants &amp; Roles →</a>
+      <a href="quiz.html" style="display:block;font-size:0.82rem;color:var(--amber);text-decoration:none;padding:0.5rem 0;font-weight:600;">Module 1 Quiz →</a>
+    </div>
+  </aside>
+
+</div>
+
+<script src="assets/js/progress.js"></script>
+</body>
+</html>

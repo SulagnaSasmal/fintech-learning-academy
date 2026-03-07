@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate of Completion — FinTech Learning Academy</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FinTech<span>·</span>Academy</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">← All Courses</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn btn-outline btn-sm" onclick="window.print()">Print Certificate</button>
+    </div>
+  </div>
+</nav>
+
+<div class="certificate-wrap">
+  <div style="text-align:center;margin-bottom:2rem;">
+    <p class="section-label">Achievement</p>
+    <h1 class="section-title">Your Certificate of Completion</h1>
+  </div>
+
+  <div class="certificate-frame">
+    <div class="certificate-header">FinTech Learning Academy</div>
+    <div class="certificate-title">Certificate of Completion</div>
+    <div class="certificate-sub">This is to certify that</div>
+    <div class="certificate-name" id="cert-name" contenteditable="true" title="Click to edit your name">Your Name Here</div>
+    <p class="certificate-course" style="margin-top:0.75rem;">has successfully completed the course</p>
+    <h2 style="font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--text);margin:0.5rem 0 1.5rem;letter-spacing:-0.015em;">Payments Fundamentals</h2>
+    <div style="display:flex;gap:2rem;justify-content:center;font-size:0.82rem;color:var(--text-3);margin-bottom:1.5rem;">
+      <span><strong style="color:var(--text);">4</strong> Modules</span>
+      <span><strong style="color:var(--text);">12</strong> Lessons</span>
+      <span><strong style="color:var(--text);">3</strong> Hours</span>
+      <span><strong style="color:var(--teal);">Quiz Score: 5/5</strong></span>
+    </div>
+    <div class="certificate-seal">🏅</div>
+    <div class="certificate-footer">
+      <div class="certificate-sig">
+        <div class="certificate-sig-line"></div>
+        <div class="certificate-sig-name">Sulagna Sasmal<br>Course Author & Content Lead</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--amber);line-height:1;">FLA</div>
+        <div style="font-size:0.68rem;color:var(--text-4);font-family:var(--font-mono);">FINTECH·ACADEMY</div>
+      </div>
+      <div class="certificate-sig">
+        <div class="certificate-sig-line"></div>
+        <div class="certificate-sig-name" id="cert-date">Date: <span id="completion-date"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:2rem;">
+    <p style="font-size:0.82rem;color:var(--text-3);margin-bottom:1rem;">Click your name above to edit it before printing.</p>
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-primary" onclick="window.print()">🖨️ Print Certificate</button>
+      <a href="index.html" class="btn btn-outline">← Browse More Courses</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Set today's date
+  document.getElementById('completion-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+</script>
+<script src="assets/js/progress.js"></script>
+</body>
+</html>

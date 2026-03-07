@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 1 Knowledge Check — FinTech Learning Academy</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">FinTech<span>·</span>Academy</a>
+    <div class="nav-links">
+      <a href="course-payments.html" class="nav-link">← Back to Course</a>
+    </div>
+  </div>
+</nav>
+
+<div style="max-width:720px;margin:3rem auto;padding:0 2rem;">
+
+  <div class="breadcrumb">
+    <a href="index.html">Academy</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="course-payments.html">Payments Fundamentals</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Module 1 Quiz</span>
+  </div>
+
+  <div style="background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem;margin-top:1rem;">
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <div style="font-size:2rem;">📝</div>
+      <div>
+        <div style="font-family:var(--font-display);font-weight:800;color:var(--text);font-size:1.25rem;">Module 1 Knowledge Check</div>
+        <div style="font-size:0.83rem;color:var(--text-2);margin-top:0.25rem;">5 questions · Payments Fundamentals · Score ≥ 80% to advance</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz-container">
+
+    <!-- Q1 -->
+    <div class="quiz-question" id="q1">
+      <div class="quiz-q-text">1. A customer sets up an automatic monthly rent payment where their landlord's bank pulls funds from their account on the 1st of each month. This is an example of:</div>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="false">A push payment initiated by the customer</div>
+        <div class="quiz-option" data-correct="true">A pull payment initiated by the payee</div>
+        <div class="quiz-option" data-correct="false">A wire transfer with same-day settlement</div>
+        <div class="quiz-option" data-correct="false">A real-time payment (RTP) transaction</div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-question" id="q2">
+      <div class="quiz-q-text">2. In the four-party card payment model, which entity is responsible for authorizing a card transaction and bearing credit risk?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="false">The acquiring bank</div>
+        <div class="quiz-option" data-correct="false">The card network (Visa/Mastercard)</div>
+        <div class="quiz-option" data-correct="true">The issuing bank</div>
+        <div class="quiz-option" data-correct="false">The payment service provider (PSP)</div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-question" id="q3">
+      <div class="quiz-q-text">3. A card transaction is authorized at 2:00 PM. The merchant's account is credited the next business day at 9:00 AM. What process occurred overnight?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="false">Authorization and real-time settlement</div>
+        <div class="quiz-option" data-correct="false">Tokenization and 3DS authentication</div>
+        <div class="quiz-option" data-correct="true">Clearing and settlement (batch processing)</div>
+        <div class="quiz-option" data-correct="false">Dispute resolution and chargeback filing</div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-question" id="q4">
+      <div class="quiz-q-text">4. Which of the following payment rails supports true real-time, 24/7/365 settlement with near-immediate finality?</div>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="false">ACH (Standard) — T+1 batch</div>
+        <div class="quiz-option" data-correct="false">Visa card network</div>
+        <div class="quiz-option" data-correct="true">RTP (The Clearing House Real-Time Payments)</div>
+        <div class="quiz-option" data-correct="false">SWIFT wire transfers</div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-question" id="q5">
+      <div class="quiz-q-text">5. A merchant receives $97.50 for a $100.00 card sale. The $2.50 difference most likely represents:</div>
+      <div class="quiz-options">
+        <div class="quiz-option" data-correct="false">The settlement delay adjustment</div>
+        <div class="quiz-option" data-correct="true">Interchange fees distributed across the card network participants</div>
+        <div class="quiz-option" data-correct="false">A currency conversion charge</div>
+        <div class="quiz-option" data-correct="false">A PCI DSS compliance levy</div>
+      </div>
+    </div>
+
+    <!-- SCORE DISPLAY -->
+    <div id="quiz-score" style="display:none;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2.5rem;text-align:center;margin-top:2rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">🎉</div>
+      <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--amber);">
+        <span id="score-count">0</span> / 5
+      </div>
+      <div style="color:var(--text-2);margin:0.5rem 0 1.5rem;font-size:0.9rem;">correct answers</div>
+      <p style="color:var(--text-2);font-size:0.875rem;margin-bottom:1.5rem;">Score ≥ 4/5 (80%) qualifies you for the Module 1 certificate of completion.</p>
+      <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+        <a href="certificate.html" class="btn btn-primary">Claim Certificate →</a>
+        <a href="lesson.html" class="btn btn-outline">Review Lesson</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="assets/js/progress.js"></script>
+</body>
+</html>
