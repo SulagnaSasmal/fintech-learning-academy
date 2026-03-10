@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Payment Definition, Types & Core Concepts — FinTech Learning Academy</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");else document.documentElement.setAttribute("data-theme","light");})()</script>
 </head>
 <body>
 
@@ -19,6 +20,7 @@
       <a href="quiz.html" class="btn btn-primary btn-sm">Take Quiz →</a>
     </div>
   </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9680;</button>
 </nav>
 
 <div class="lesson-layout">
@@ -189,7 +191,8 @@
         <a href="#rails">Payment Types by Rail</a>
         <a href="#participants">Key Participants</a>
         <a href="#timing">Authorization vs. Settlement</a>
-      </nav>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9680;</button>
+</nav>
     </div>
     <div class="sidebar-card">
       <div class="sidebar-card-title">Course Progress</div>
@@ -222,5 +225,6 @@
 </div>
 
 <script src="assets/js/progress.js"></script>
+<script src="assets/js/theme.js"></script>
 </body>
 </html>

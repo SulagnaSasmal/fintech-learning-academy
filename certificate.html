@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificate of Completion — FinTech Learning Academy</title>
 <link rel="stylesheet" href="assets/css/style.css">
+<script>(function(){var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t);else if(window.matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.setAttribute("data-theme","dark");else document.documentElement.setAttribute("data-theme","light");})()</script>
 </head>
 <body>
 
@@ -18,6 +19,7 @@
       <button class="btn btn-outline btn-sm" onclick="window.print()">Print Certificate</button>
     </div>
   </div>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">&#9680;</button>
 </nav>
 
 <div class="certificate-wrap">
@@ -70,5 +72,6 @@
   document.getElementById('completion-date').textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 </script>
 <script src="assets/js/progress.js"></script>
+<script src="assets/js/theme.js"></script>
 </body>
 </html>

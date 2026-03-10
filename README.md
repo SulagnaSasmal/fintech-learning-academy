@@ -52,3 +52,29 @@ Open `index.html` in any modern browser. No build step, no dependencies.
 ---
 
 *Part of the technical writing portfolio at [sulagnasasmal.com](https://sulagnasasmal.com)*
+
+## Dark / Light Mode
+
+All pages support dark and light themes via a toggle button (◐ / ☀) in the navigation bar. Theme preference persists in `localStorage`. System `prefers-color-scheme` is respected on first visit.
+
+## Status
+
+**Phase 5 — FinTech LMS — Complete**
+
+| Area | Status |
+|------|--------|
+| Course catalog (4 courses) | Complete |
+| Payments Fundamentals course page | Complete |
+| Sample lesson with full content | Complete |
+| Interactive quiz engine | Complete |
+| Certificate of completion UI | Complete |
+| Progress tracking (localStorage) | Complete |
+| Dark / light theme support | Complete |
+
+## Future Enhancements
+
+- Full lesson content for all 4 courses (currently 1 sample lesson)
+- All 3 remaining course pages (Fraud, ACH, AML)
+- Video lesson embed support
+- Downloadable PDF study guides
+- Backend progress sync (beyond localStorage)
